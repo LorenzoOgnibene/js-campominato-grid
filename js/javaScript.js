@@ -1,8 +1,10 @@
 
-function createSquareElement(content, classes){
+function createSquareElement(content, classes, w, h){
     const square = document.createElement('div');
     square.innerText = content;
     square.classList.add(classes,  "d-flex", "justify-content-center", "align-items-center", "fs-5", "p-3")
+    square.style.width = `calc(100% / ${w})`
+    square.style.height = `calc(100% / ${h})`
     square.addEventListener('click', function(){
         square.classList.toggle("click")
     })
@@ -10,15 +12,26 @@ function createSquareElement(content, classes){
 }
 
 
-
-
-const playButton = document.querySelector('a.btn');
 const containerElement = document.querySelector('div.big-square');
 const newSquare = createSquareElement();
+const playButton = document.querySelector('button.btn');
+const gridSelection = document.getElementById('grid-value').value;
+
+
 
 playButton.addEventListener('click', function(){
     containerElement.innerHTML = ' ';
-    for(let i = 1; i < 101; i++){
-        containerElement.appendChild(createSquareElement(i, 'square'));
+    if(gridSelection == 65){
+        for(let i = 1; i < gridSelection; i++){
+            containerElement.appendChild(createSquareElement(i, 'square', 8, 8));
+        }
+    }else if(gridSelection == 50){
+        for(let i = 1; i < gridSelection; i++){
+            containerElement.appendChild(createSquareElement(i, 'square', 7, 7));
+        }
+    }else{
+        for(let i = 1; i < gridSelection; i++){
+            containerElement.appendChild(createSquareElement(i, 'square'));
+        }
     }
 })
