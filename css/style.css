@@ -1,0 +1,24 @@
+header{
+    height: 12vh;
+}
+
+main{
+    height: 80vh;
+    background-color: #7fffd4;
+}
+
+footer{
+    height: 8vh;
+}
+
+.big-square{
+    width: 600px;
+    height: 600px;
+    border: 2px solid blue;
+}
+
+.square{
+    width: calc(100% / 10);
+    height: calc(100% / 10);
+    border: 2px solid blue;
+}
