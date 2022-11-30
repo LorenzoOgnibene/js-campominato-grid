@@ -5,6 +5,7 @@ header{
 main{
     height: 80vh;
     background-color: #7fffd4;
+    overflow: scroll;
 }
 
 footer{
