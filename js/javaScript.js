@@ -17,21 +17,19 @@ const newSquare = createSquareElement();
 const playButton = document.querySelector('button.btn');
 
 
-
 playButton.addEventListener('click', function(){
+    let width = 10;
+    let height = 10;
     const gridSelection = document.getElementById('grid-value').value;
     containerElement.innerHTML = ' ';
     if(gridSelection == 65){
-        for(let i = 1; i < gridSelection; i++){
-            containerElement.appendChild(createSquareElement(i, 'square', 8, 8));
-        }
+        width = 8;
+        height = 8;
     }else if(gridSelection == 50){
-        for(let i = 1; i < gridSelection; i++){
-            containerElement.appendChild(createSquareElement(i, 'square', 7, 7));
-        }
-    }else{
-        for(let i = 1; i < gridSelection; i++){
-            containerElement.appendChild(createSquareElement(i, 'square'));
-        }
+        width = 7;
+        height = 7;
+    }
+    for(let i = 1; i < gridSelection; i++){
+        containerElement.appendChild(createSquareElement(i, 'square', width, height));
     }
 })
