@@ -15,11 +15,11 @@ function createSquareElement(content, classes, w, h){
 const containerElement = document.querySelector('div.big-square');
 const newSquare = createSquareElement();
 const playButton = document.querySelector('button.btn');
-const gridSelection = document.getElementById('grid-value').value;
 
 
 
 playButton.addEventListener('click', function(){
+    const gridSelection = document.getElementById('grid-value').value;
     containerElement.innerHTML = ' ';
     if(gridSelection == 65){
         for(let i = 1; i < gridSelection; i++){
